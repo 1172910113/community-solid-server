@@ -1,10 +1,12 @@
 /.acl
 /.eslintcache
+/.internal
 /componentsjs-error-state.json
 /coverage
 /data
 /dist
 /docs
+/neilchao
 /node_modules
 /test/tmp
 tsconfig.tsbuildinfo
