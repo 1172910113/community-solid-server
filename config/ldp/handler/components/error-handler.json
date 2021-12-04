@@ -1,0 +1,17 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^2.0.0/components/context.jsonld",
+  "@graph": [
+    {
+      "comment": "Wraps around the main error handler as a fallback in case something goes wrong.",
+      "@id": "urn:solid-server:default:ErrorHandler",
+      "@type": "SafeErrorHandler",
+      "showStackTrace": { "@id": "urn:solid-server:default:variable:showStackTrace" },
+      "errorHandler": {
+        "comment": "Changes an error into a valid representation to send as a response.",
+        "@type": "ConvertingErrorHandler",
+        "converter": { "@id": "urn:solid-server:default:UiEnabledConverter" },
+        "showStackTrace": { "@id": "urn:solid-server:default:variable:showStackTrace" }
+      }
+    }
+  ]
+}

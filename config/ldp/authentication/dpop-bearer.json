@@ -1,0 +1,25 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^2.0.0/components/context.jsonld",
+  "@graph": [
+    {
+      "comment": "Supports DPoP and Bearer access tokens, or no credentials.",
+      "@id": "urn:solid-server:default:CredentialsExtractor",
+      "@type": "UnionCredentialsExtractor",
+      "extractors": [
+        {
+          "@type": "WaterfallHandler",
+          "handlers": [
+            {
+              "@type": "DPoPWebIdExtractor",
+              "originalUrlExtractor": {
+                "@type": "OriginalUrlExtractor"
+              }
+            },
+            { "@type": "BearerWebIdExtractor" }
+          ]
+        },
+        { "@type": "PublicCredentialsExtractor" }
+      ]
+    }
+  ]
+}

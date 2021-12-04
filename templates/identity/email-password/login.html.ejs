@@ -1,0 +1,32 @@
+<h1>Log in</h1>
+<form method="post">
+  <% prefilled = locals.prefilled || {}; %>
+
+  <% if (locals.message) { %>
+    <p class="error"><%= message %></p>
+  <% } %>
+
+  <fieldset>
+    <legend>Your account</legend>
+    <ol>
+      <li>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autofocus value="<%= prefilled.email || '' %>">
+      </li>
+      <li>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+      </li>
+      <li class="checkbox">
+        <label><input type="checkbox" name="remember" value="yes" checked>Stay logged in</label>
+      </li>
+    </ol>
+  </fieldset>
+
+  <p class="actions"><button type="submit" name="submit">Log in</button></p>
+
+  <ul class="actions">
+    <li><a href="<%= controls.register %>" class="link">Sign up</a></li>
+    <li><a href="<%= controls.forgotPassword %>" class="link">Forgot password</a></li>
+  </ul>
+</form>
